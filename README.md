@@ -1,0 +1,2 @@
+# codeGenerator
+数据库表转为golang实体struct的工具
