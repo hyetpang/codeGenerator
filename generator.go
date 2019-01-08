@@ -214,14 +214,15 @@ func (generator *Generator) toModel(models map[string][]modelInfo) {
 				columnName = getName(columnName)
 			}
 			if generator.isAddJsonTag {
-
 				tag += fmt.Sprintf(`json:"%s"`, strings.ToLower(string(columnName[0]))+columnName[1:])
 			}
 			if len(generator.tags) > 0 {
-				tag += "," + generator.tags
-			}
-			if model.DataType == "time.Time" {
-				//isContainTime = true
+				//temp := template.New("tags")
+				//parse, err := temp.Parse(generator.tags)
+				//if err != nil {
+				//	fmt.Println("")
+				//}
+				tag += "," + strings.Replace(generator.tags, COLUMN, columnName, -1)
 			}
 			modelStruct += TAB + columnName + TAB + model.DataType + TAB + "`" + tag + "`" + ENTER
 		}
