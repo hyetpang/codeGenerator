@@ -20,5 +20,5 @@ const (
 	Underline string = "_"
 	TAB       string = "	"
 	ENTER     string = "\r\n"
-	COLUMN    string = "${column}"
+	COLUMN    string = "${columnName}"
 )

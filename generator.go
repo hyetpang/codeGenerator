@@ -222,7 +222,7 @@ func (generator *Generator) toModel(models map[string][]modelInfo) {
 				//if err != nil {
 				//	fmt.Println("")
 				//}
-				tag += "," + strings.Replace(generator.tags, COLUMN, columnName, -1)
+				tag += "," + strings.Replace(generator.tags, COLUMN, model.ColumnName, -1)
 			}
 			modelStruct += TAB + columnName + TAB + model.DataType + TAB + "`" + tag + "`" + ENTER
 		}
