@@ -227,6 +227,8 @@ func (generator *Generator) toModel(models map[string][]modelInfo) {
 			modelStruct += TAB + columnName + TAB + model.DataType + TAB + "`" + tag + "`" + ENTER
 		}
 		modelStruct += "}" + strings.Repeat(ENTER, 2)
+		modelStruct += strings.Replace(strings.Replace(TABLE_NAME_FUNC, MODEL_NAME, modeName, -1), TABLE_NAME, tableName, -1)
+		modelStruct += "}" + strings.Repeat(ENTER, 2)
 		modelStructs += modelStruct
 		modelStruct = firstPackage + modelStruct
 		if !generator.isSingleFile {

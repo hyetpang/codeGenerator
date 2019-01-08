@@ -17,8 +17,13 @@ var GetDataType = map[string]string{
 }
 
 const (
-	Underline string = "_"
-	TAB       string = "	"
-	ENTER     string = "\r\n"
-	COLUMN    string = "${columnName}"
+	Underline       string = "_"
+	TAB             string = "	"
+	ENTER           string = "\r\n"
+	COLUMN          string = "${columnName}"
+	MODEL_NAME      string = "${modelName}"
+	TABLE_NAME      string = "${tableName}"
+	TABLE_NAME_FUNC string = `func (${modelName}) TableName() string {
+							 return "${tableName}"
+						 }`
 )
